@@ -4,9 +4,6 @@ rvm: 2.7.3
 services:
   - xvfb
   - postgresql
-
-addons:
-  postgresql: '13'
 before_install:
 - sudo service postgresql restart
 - postgres --version
