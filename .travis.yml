@@ -1,0 +1,18 @@
+dist: focal
+language: ruby
+
+addons:
+  postgresql: '12'
+  apt:
+      packages:
+        - postgresql-12
+env:
+  global:
+  - PGUSER=postgres
+  - PGPORT=5432
+  - PGHOST=localhost
+before_install:
+- postgres --version
+
+script:
+  - psql -c 'create database travis_ci_test;' -U postgres
