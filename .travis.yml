@@ -1,4 +1,4 @@
-dist: xenial
+dist: focal
 language: ruby
 rvm: 2.7.3
 services:
@@ -7,6 +7,9 @@ services:
 
 addons:
   postgresql: '13'
+  apt:
+      packages:
+          - postgresql-client-13
 before_install:
 - sudo service postgresql restart
 
