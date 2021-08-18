@@ -13,5 +13,6 @@ script:
 - gem install rails
 - gem install pg
 - rails new test-project --database=postgresql
+- cd test-project
 - rails db:migrate
 - postgres --version
