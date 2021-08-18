@@ -14,5 +14,7 @@ script:
 - gem install pg
 - rails new test-project --database=postgresql
 - cd test-project
+- rails db:create
+- rails g scaffold Test name:string
 - rails db:migrate
 - postgres --version
