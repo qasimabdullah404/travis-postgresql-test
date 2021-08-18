@@ -3,11 +3,9 @@ language: ruby
 
 addons:
   postgresql: '13'
-  apt:
-      packages:
-        - postgresql-13
-#before_install:
-#- postgres --version
+before_install:
+- sudo service postgresql restart
+- postgres --version
 
 script:
 - gem install rails
