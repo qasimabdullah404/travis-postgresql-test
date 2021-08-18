@@ -1,6 +1,10 @@
 dist: focal
 language: ruby
 
+services:
+  - xvfb
+  - postgresql
+
 addons:
   postgresql: '13'
 before_install:
