@@ -9,10 +9,12 @@ env:
   - PGHOST=localhost
 before_install:
 - sudo apt update
-- sudo apt install postgresql postgresql-contrib
-- sudo service postgresql restart
-- sleep 1
-- postgres --version
+- sudo apt -y upgrade
+- sudo apt -y install vim bash-completion wget
+- wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+- echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+- sudo apt update
+- sudo apt install postgresql-13 postgresql-client-13
 
 script:
   - psql -c 'create database travis_ci_test;' -U postgres
